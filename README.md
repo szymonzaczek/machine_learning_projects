@@ -15,6 +15,7 @@ Predicting USD/PLN exchange rates with Long-Short Term Memory Recurrent Neural N
 #### Packages used
 - sklearn
 - keras
+- tensorflow
 - numpy
 - matplotlib
 
