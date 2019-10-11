@@ -2,8 +2,7 @@
 
 ### Currently published projects:
 - __Predicting USD/PLN exchange rates with recurrent neural networks__
-- __Unsupervised machine learning providing insight into functioning of an enzyme__
-- __Dimensionality reduction of molecular simulations__
+- __Reducing dimensionality of molecular simulations__
 
 
 ## __Predicting USD/PLN exchange rates__
@@ -51,7 +50,9 @@ Presented herein application of unsupervised machine learning was used in the pu
 ### Overview
 This notebook presents an application of PCA and k-means clustering that aided me in providing an insight into identifying dominant movements of an enzyme during performed molecular dynamics simulations.
 
-Dataset consists of results of molecular dynamics simulations of an enzymatic system, carried out for 500 ns in Amber software. There are two files available. 'topology_4zaf.prmtop' is the topology file, which contains all information regarding the definition of molecular system (i. e. which atom is bonded to which), whereas 'traj_short.nc' is the trajectory file, which is a binary file containing info about xyz coordinates of each atom.
+Dataset consists of results of molecular dynamics simulations of an enzymatic system, carried out for 500 ns in Amber software. Those simulations were performed with Tesla K40 XL GPU on Prometheus Supercomputer, that is a part of PLGrid initiative. Those simulations took about 30 days to complete.
+
+There are two files available. 'topology_4zaf.prmtop' is the topology file, which contains all information regarding the definition of molecular system (i. e. which atom is bonded to which), whereas 'traj_short.nc' is the trajectory file, which is a binary file containing info about xyz coordinates of each atom. Simula
 
 Herein, PyEmma package was used due to its convenient handling of molecular data (it does not require converting topology and trajectory files to numpy array).
 
