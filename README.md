@@ -3,6 +3,7 @@
 ### Currently published projects:
 - __Predicting USD/PLN exchange rates with recurrent neural networks__
 - __Unsupervised machine learning providing insight into functioning of an enzyme__
+- __Dimensionality reduction of molecular simulations__
 
 
 ## __Predicting USD/PLN exchange rates__
@@ -30,7 +31,7 @@ There are 6 LSTM layer, each one has 50 neurons and a dropout rate equal to 20%.
 
 For making predictions, I constructed multi-layered (6 layers) Long-Short Term Memory Recurrent Neural Networks. Each layer has dropout rate specified as 0.2 (random 20% of the neurons are not used during each update while training to prevent overfitting).
 
-## __Unsupervised machine learning (PCA and k-means clustering) providing insight into functioning of an enzyme__
+## __Dimensionality reduction (PCA and k-means clustering) of molecular simulations__
 Application of unsupervised machine learning algorithm (PCA) allowed for identification of correlated atomic motions during molecular dynamics (MD) simulations of UbiX enzymes.
 
 Presented herein application of unsupervised machine learning was used in the published scientific paper:
