@@ -1,16 +1,57 @@
 # __Machine learning projects__
 
 ### Currently published projects:
+- __NLP: Sentiment analysis of reviews using artificial neural networks__
 - __Predicting USD/PLN exchange rates with recurrent neural networks__
 - __Reducing dimensionality of molecular simulations__
+
+## __NLP: Sentiment analysis of reviews using artificial neural networks__
+Basing on the text of the review, constructed Artificial Neural Network predicts if a given opinion is negative, neutral or positive.
+
+## Type of machine learning problem
+- Supervised Machine Learning
+- Multi-label classification
+
+### Technologies used
+- Python
+- NLP (Natural Language Processing) - Sentiment Analysis
+- Deep learning - Artificial Neural networks
+
+#### Packages used
+- sklearn
+- keras
+- tensorflow
+- nltk
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- wordcloud
+
+### Overview
+This notebook illustrates an application of  one of Natural Language Processing technologies - Sentiment Analysis. Given the written review of a product bought in an online shop, constructed Deep Neural Network predicts whether this opinion is negative, neutral or positive.
+
+Dataset contains reviews of Cell Phones and Accessories collected by Julian McAuley from Amazon web shop. Dataset was downloaded from: http://snap.stanford.edu/data/amazon/productGraph/categoryFiles/reviews_Cell_Phones_and_Accessories_5.json.gz
+
+Significant preprocessing of data was conducted in order to construct ANN. First, reviews from json file must have been properly loaded. Dataset was transformed to Pandas Dataframe format, which made further processing easier. Dataset was skimmed to have equal number of negative, neutral and positive reviews. Then, text of reviews was tokenized and only tokens that were found more often than 20 times in the whole dataset were retained for model construction and subsequent predictions.
+
+Wordcloud was used to illustrate which words were most frequent in the dataset.
+
+Artificial Neural Network contains 2 deep layers (20 nodes each) and one output layer (since there are 3 labels, 3 output nodes were used). Several attempts were made to avoid overfitting - high dropout rate (0.4), weight and activation function regularization.
+
+Constructed confusion matrix illustrates that the model is competent with differentiating between positive and negative reviews though it struggles with neutral reviews. This is due to the fact that even though the rating for a given product might be neutral, the overall undertone of the review is usually polarized either towards negative or positive attributes.
 
 
 ## __Predicting USD/PLN exchange rates__
 Predicting USD/PLN exchange rates with Long-Short Term Memory Recurrent Neural Networks.
 
+## Type of machine learning problem
+- Supervised Machine Learning
+- Regression
+
 ### Technologies used
 - Python
-- Deep learning - LSTM Recurrent Neural Networks
+- Deep learning - Long Short Term Memory (LSTM) Recurrent Neural Networks
 
 #### Packages used
 - sklearn
@@ -38,9 +79,13 @@ Presented herein application of unsupervised machine learning was used in the pu
 
 [![DOI:10.1002/cbic.201800389](https://zenodo.org/badge/DOI/10.1002/cbic.201800389.svg)](https://doi.org/10.1002/cbic.201800389)
 
+## Type of machine learning problem
+- Unsupervised Machine Learning
+
 ### Technologies used
 - Python
-- Unsupervised Machine Learning - PCA and k-means clustering
+- Principal Component Analysis (PCA)
+- k-means clustering
 
 #### Packages used
 - pyemma
