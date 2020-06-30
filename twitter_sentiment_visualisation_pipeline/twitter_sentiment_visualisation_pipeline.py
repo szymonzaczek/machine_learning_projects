@@ -60,8 +60,6 @@ for tweet in search_results:
 
 
 def vader_sentiment_score(tweet_text: str) -> float:
-    print(type(SentimentIntensityAnalyzer()))
-    print(SentimentIntensityAnalyzer().polarity_scores(tweet_text)["compound"])
     return round(
         SentimentIntensityAnalyzer().polarity_scores(tweet_text)["compound"], 3
     )
