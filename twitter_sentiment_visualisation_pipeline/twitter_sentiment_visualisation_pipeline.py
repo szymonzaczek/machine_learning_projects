@@ -23,12 +23,12 @@ date_for_query = datetime.date.today()
 while True:
     date_formatted = date_for_query.strftime("%Y-%m-%d")
     query = (
-    "q="
-    + "%20".join(keywords)
-    + "%20since%3A"
-    + date_formatted
-    + "%20"
-    + "-filter%3Alinks%20filter%3Areplies&count=100&lang=en"
+        "q="
+        + "%20".join(keywords)
+        + "%20since%3A"
+        + date_formatted
+        + "%20"
+        + "-filter%3Alinks%20filter%3Areplies&count=100&lang=en"
     )
     search_results = api.GetSearch(raw_query=query)
     if len(search_results) > 30:
@@ -58,10 +58,14 @@ for tweet in search_results:
     if len(tweet_text) > 20:
         tweets_text.append(tweet_text.lstrip())
 
+
 def vader_sentiment_score(tweet_text: str) -> float:
     print(type(SentimentIntensityAnalyzer()))
     print(SentimentIntensityAnalyzer().polarity_scores(tweet_text)["compound"])
-    return round(SentimentIntensityAnalyzer().polarity_scores(tweet_text)["compound"], 3)
+    return round(
+        SentimentIntensityAnalyzer().polarity_scores(tweet_text)["compound"], 3
+    )
+
 
 sentiment_score_vader = []
 for tweet in tweets_text:
@@ -79,9 +83,9 @@ for score in sentiment_score_vader:
 x_axis = ["negative", "neutral", "positive"]
 y_axis = [
     sentiment_list.count("negative"),
-          sentiment_list.count("neutral"),
-          sentiment_list.count("positive")
-          ]
+    sentiment_list.count("neutral"),
+    sentiment_list.count("positive"),
+]
 
 date_for_query = datetime.date.today()
 
@@ -102,7 +106,7 @@ else:
         f"Sentiment of Tweets containing keywords: {', '.join(keywords).replace('[', '').replace(']', '')}\npublished today ({date_for_query.strftime('%d.%m')})",
         weight="bold",
     )
-ylim = max(*y_axis) + 0.1*max(*y_axis)
+ylim = max(*y_axis) + 0.1 * max(*y_axis)
 for p in ax.patches:
     b = p.get_bbox()
     val = f"{int(b.y1 + b.y0)}"
@@ -115,7 +119,7 @@ for p in ax.patches:
     ax.set_ylim(plt.axes().get_ylim()[0], ylim + 0.5)
 
 fig.savefig(
-f"tweets_sentiment_{'_'.join(keywords).replace('[', '').replace(']', '')}_{datetime.date.today().strftime('%d_%m')}.png",
-bbox_inches="tight",
-pad_inches=0.1,
+    f"tweets_sentiment_{'_'.join(keywords).replace('[', '').replace(']', '')}_{datetime.date.today().strftime('%d_%m')}.png",
+    bbox_inches="tight",
+    pad_inches=0.1,
 )
