@@ -85,8 +85,6 @@ y_axis = [
     sentiment_list.count("positive"),
 ]
 
-date_for_query = datetime.date.today()
-
 colors = ["firebrick", "dodgerblue", "limegreen"]
 sns.set_palette(sns.color_palette(colors))
 sns.set_style("darkgrid")
